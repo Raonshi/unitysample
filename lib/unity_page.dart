@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:unitysample/model/unity_ipc_payload.dart';
 import 'package:unitysample/unity_ipc_manager.dart';
 import 'package:unitysample/unity_widget.dart';
 
@@ -19,7 +18,7 @@ class _UnityPageState extends State<UnityPage> {
   @override
   void initState() {
     _sliderValue = 1.0;
-    _ipcManager.sendMessage(UnityIpcSetRotation(rotation: _sliderValue));
+    _ipcManager.sendMessage(_sliderValue);
     super.initState();
   }
 
@@ -33,7 +32,7 @@ class _UnityPageState extends State<UnityPage> {
         min: 0.1,
         max: 5.0,
         onChanged: (value) {
-          _ipcManager.sendMessage(UnityIpcSetRotation(rotation: value));
+          _ipcManager.sendMessage(value);
           setState(() {
             _sliderValue = value;
           });
