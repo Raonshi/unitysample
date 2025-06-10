@@ -3,8 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-
-const String _viewType = "@unity/sample";
+import 'package:unitysample/unity_channel.dart';
 
 class UnityWidget extends StatelessWidget {
   const UnityWidget({super.key});
@@ -12,7 +11,7 @@ class UnityWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PlatformViewLink(
-      viewType: _viewType,
+      viewType: UnityChannel.view.channelName,
       surfaceFactory:
           (BuildContext context, PlatformViewController controller) {
             return AndroidViewSurface(
@@ -25,7 +24,7 @@ class UnityWidget extends StatelessWidget {
       onCreatePlatformView: (PlatformViewCreationParams params) {
         final controller = PlatformViewsService.initExpensiveAndroidView(
           id: params.id,
-          viewType: _viewType,
+          viewType: UnityChannel.view.channelName,
           layoutDirection: TextDirection.ltr,
           creationParams: {},
           creationParamsCodec: const StandardMessageCodec(),
