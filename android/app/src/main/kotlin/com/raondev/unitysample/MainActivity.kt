@@ -5,22 +5,28 @@ import com.unity3d.player.IUnityPlayerLifecycleEvents
 import com.unity3d.player.UnityPlayerForActivityOrService
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
+import io.flutter.plugin.common.MethodChannel
 
 class MainActivity : FlutterActivity(), IUnityPlayerLifecycleEvents {
-    lateinit var unityIpcManager: UnityIpcManager
+    val unityIpcManager = UnityIpcManager()
     lateinit var unityPlayer: UnityPlayerForActivityOrService
+    lateinit var ipcChannel:MethodChannel
 
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
 
-        unityIpcManager = UnityIpcManager()
+        ipcChannel = MethodChannel(
+            flutterEngine.dartExecutor.binaryMessenger,
+            UnityChannel.ipc.channelName)
+        ipcChannel.setMethodCallHandler(unityIpcManager)
+
         unityPlayer = UnityPlayerForActivityOrService(this@MainActivity, this)
 
         flutterEngine
             .platformViewsController
             .registry
-            .registerViewFactory("@unity/sample",
+            .registerViewFactory(UnityChannel.view.channelName,
                 UnityViewFactory(unityPlayer))
     }
 
