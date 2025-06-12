@@ -24,21 +24,26 @@ class _UnityPageState extends State<UnityPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Unity Sample Page")),
-      body: Column(
-        children: [
-          Expanded(child: UnityWidget()),
-          Slider.adaptive(
-            value: _sliderValue,
-            min: 0.1,
-            max: 50.0,
-            onChanged: (value) {
-              _ipcManager.sendMessage(value);
-              setState(() {
-                _sliderValue = value;
-              });
-            },
-          ),
-        ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(child: UnityWidget()),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Slider.adaptive(
+                value: _sliderValue,
+                min: 0.1,
+                max: 50.0,
+                onChanged: (value) {
+                  _ipcManager.sendMessage(value);
+                  setState(() {
+                    _sliderValue = value;
+                  });
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

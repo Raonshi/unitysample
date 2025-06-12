@@ -10,6 +10,20 @@ import UIKit
   ) -> Bool {
       GeneratedPluginRegistrant.register(with: self)
       
+      // MARK: - Window Custom (iOS 15 터치 이슈)
+      var window: CustomWindow
+      if let windowScene = self.window.windowScene {
+          window = CustomWindow(windowScene: windowScene)
+      } else {
+          window = CustomWindow(frame: UIScreen.main.bounds)
+      }
+      
+      // MARK: - Window 계층 이슈
+      window.windowLevel = .normal + 100
+      window.rootViewController = self.window.rootViewController
+      window.makeKeyAndVisible()
+      self.window = window
+      
       // MARK: - UnityFramwork 구동
       _ = UnityManager()
       

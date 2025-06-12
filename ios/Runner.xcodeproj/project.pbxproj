@@ -14,6 +14,7 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
+		A0158F5D2DFB0B09009677DC /* CustomWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0158F5C2DFB0B02009677DC /* CustomWindow.swift */; };
 		A05CFCCE2DF9A55100BB7E0A /* UnityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05CFCCD2DF9A54800BB7E0A /* UnityView.swift */; };
 		A05CFCD02DF9A60400BB7E0A /* UnityViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05CFCCF2DF9A60100BB7E0A /* UnityViewFactory.swift */; };
 		A05CFCD62DF9A84F00BB7E0A /* UnityIpcManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05CFCD52DF9A84C00BB7E0A /* UnityIpcManager.swift */; };
@@ -62,6 +63,7 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0158F5C2DFB0B02009677DC /* CustomWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWindow.swift; sourceTree = "<group>"; };
 		A05CFCCD2DF9A54800BB7E0A /* UnityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnityView.swift; sourceTree = "<group>"; };
 		A05CFCCF2DF9A60100BB7E0A /* UnityViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnityViewFactory.swift; sourceTree = "<group>"; };
 		A05CFCD52DF9A84C00BB7E0A /* UnityIpcManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnityIpcManager.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				A0158F5C2DFB0B02009677DC /* CustomWindow.swift */,
 				A05CFCD72DF9AD2000BB7E0A /* UnityManager.swift */,
 				A05CFCD52DF9A84C00BB7E0A /* UnityIpcManager.swift */,
 				A05CFCCF2DF9A60100BB7E0A /* UnityViewFactory.swift */,
@@ -298,6 +301,7 @@
 				A05CFCD02DF9A60400BB7E0A /* UnityViewFactory.swift in Sources */,
 				A05CFCD62DF9A84F00BB7E0A /* UnityIpcManager.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
+				A0158F5D2DFB0B09009677DC /* CustomWindow.swift in Sources */,
 				A05CFCCE2DF9A55100BB7E0A /* UnityView.swift in Sources */,
 				A05CFCD82DF9AD2800BB7E0A /* UnityManager.swift in Sources */,
 			);
