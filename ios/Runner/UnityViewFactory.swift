@@ -8,8 +8,8 @@
 class UnityViewFactory: NSObject, FlutterPlatformViewFactory {
     private var unityManager: UnityManager
     
-    override init() {
-        self.unityManager = UnityManager()
+    init(unityManager: UnityManager) {
+        self.unityManager = unityManager
         super.init()
     }
     

@@ -8,19 +8,8 @@
 import UnityFramework
 
 class UnityManager : NSObject, NativeCallsProtocol {
-    private static var instance: UnityManager!
-    
     private var ufw: UnityFramework?
     private var unityView: UIView?
-    
-    
-        
-    static func getInstance() -> UnityManager {
-        if instance == nil {
-            instance = UnityManager()
-        }
-        return instance
-    }
     
     
     override init() {
@@ -57,8 +46,6 @@ class UnityManager : NSObject, NativeCallsProtocol {
     
     // MARK: - Init Unity Framework
     private func initUnity() {
-        self.ufw == nil
-        
         let bundlePath = Bundle.main.bundlePath + "/Frameworks/UnityFramework.framework"
         guard let bundle = Bundle(path: bundlePath) else { return }
         if !bundle.isLoaded { bundle.load() }

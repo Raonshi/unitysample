@@ -11,33 +11,6 @@ class UnityWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return switch (defaultTargetPlatform) {
-      // TargetPlatform.android => PlatformViewLink(
-      //   viewType: UnityChannel.view.channelName,
-      //   surfaceFactory:
-      //       (BuildContext context, PlatformViewController controller) {
-      //         return AndroidViewSurface(
-      //           controller: controller as AndroidViewController,
-      //           gestureRecognizers:
-      //               const <Factory<OneSequenceGestureRecognizer>>{},
-      //           hitTestBehavior: PlatformViewHitTestBehavior.opaque,
-      //         );
-      //       },
-      //   onCreatePlatformView: (PlatformViewCreationParams params) {
-      //     final controller = PlatformViewsService.initExpensiveAndroidView(
-      //       id: params.id,
-      //       viewType: UnityChannel.view.channelName,
-      //       layoutDirection: TextDirection.ltr,
-      //       creationParams: {},
-      //       creationParamsCodec: const StandardMessageCodec(),
-      //       onFocus: () => params.onFocusChanged(true),
-      //     );
-
-      //     controller
-      //       ..addOnPlatformViewCreatedListener(params.onPlatformViewCreated)
-      //       ..create();
-      //     return controller;
-      //   },
-      // ),
       TargetPlatform.android => AndroidView(
         viewType: UnityChannel.view.channelName,
         gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},

@@ -2,23 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:unitysample/unity_ipc_manager.dart';
 import 'package:unitysample/unity_widget.dart';
 
-class UnityPage extends StatefulWidget {
+class UnityPage extends StatelessWidget {
   const UnityPage({super.key});
-
-  @override
-  State<UnityPage> createState() => _UnityPageState();
-}
-
-class _UnityPageState extends State<UnityPage> {
-  late double _sliderValue;
-  final UnityIpcManager _ipcManager = UnityIpcManagerImpl();
-
-  @override
-  void initState() {
-    _sliderValue = 1.0;
-    _ipcManager.sendMessage(_sliderValue);
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,24 +12,50 @@ class _UnityPageState extends State<UnityPage> {
       body: SafeArea(
         child: Column(
           children: [
-            Expanded(child: UnityWidget()),
+            Expanded(child: const UnityWidget()),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Slider.adaptive(
-                value: _sliderValue,
-                min: 0.1,
-                max: 50.0,
-                onChanged: (value) {
-                  _ipcManager.sendMessage(value);
-                  setState(() {
-                    _sliderValue = value;
-                  });
-                },
-              ),
+              child: RotationSlider(),
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class RotationSlider extends StatefulWidget {
+  const RotationSlider({super.key});
+
+  @override
+  State<RotationSlider> createState() => _RotationSliderState();
+}
+
+class _RotationSliderState extends State<RotationSlider> {
+  late final UnityIpcManager _ipcManager;
+  late double _sliderValue;
+
+  @override
+  void initState() {
+    _ipcManager = UnityIpcManagerImpl();
+    _sliderValue = 1.0;
+    _ipcManager.sendMessage(_sliderValue);
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Slider.adaptive(
+      value: _sliderValue,
+      min: 0.1,
+      max: 50.0,
+      onChanged: (value) {
+        setState(() {
+          _sliderValue = value;
+        });
+
+        _ipcManager.sendMessage(value);
+      },
     );
   }
 }

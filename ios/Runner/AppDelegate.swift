@@ -25,7 +25,7 @@ import UIKit
       self.window = window
       
       // MARK: - UnityFramwork 구동
-      _ = UnityManager()
+      var unityManager = UnityManager()
       
       // MARK: - 유니티 IPC 연결
       if let ipcRegistrar = self.registrar(forPlugin: "MyMethodCallHandler") {
@@ -35,7 +35,7 @@ import UIKit
       
       // MARK: - 유니티 화면 연결
       if let viewRegistrar = self.registrar(forPlugin: "UnityFlutterBridge") {
-          let factory = UnityViewFactory()
+          let factory = UnityViewFactory(unityManager: unityManager)
           viewRegistrar.register(factory, withId: "@unity/view")
       }
       
