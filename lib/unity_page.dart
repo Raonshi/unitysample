@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:unitysample/unity_ipc_manager.dart';
 import 'package:unitysample/unity_widget.dart';
@@ -15,7 +17,7 @@ class UnityPage extends StatelessWidget {
             Expanded(
               child: UnityWidget(
                 onPlatformViewCreated: (id) {
-                  print("UnityWidget created with id: $id");
+                  log("UnityWidget created with id: $id");
                 },
               ),
             ),

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -18,13 +20,13 @@ class _UnityWidgetState extends State<UnityWidget> {
   @override
   void initState() {
     super.initState();
-    print("UnityWidget initState");
+    log("UnityWidget initState");
   }
 
   @override
   void dispose() {
     super.dispose();
-    print("UnityWidget dispose");
+    log("UnityWidget dispose");
   }
 
   @override
