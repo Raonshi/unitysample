@@ -25,7 +25,7 @@ import UIKit
       self.window = window
       
       // MARK: - UnityFramwork 구동
-      var unityManager = UnityManager()
+      let unityManager = UnityManager.shared
       
       // MARK: - 유니티 IPC 연결
       if let ipcRegistrar = self.registrar(forPlugin: "MyMethodCallHandler") {

@@ -30,7 +30,9 @@ class UnityView: NSObject, FlutterPlatformView {
                 .flexibleHeight
             ]
 
-            if unityView.superview != self.containerView {
+            if unityView.superview == nil {
+                self.containerView.addSubview(unityView)
+            } else if unityView.superview != self.containerView {
                 unityView.removeFromSuperview()
                 self.containerView.addSubview(unityView)
             }

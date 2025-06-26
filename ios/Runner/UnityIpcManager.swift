@@ -44,6 +44,6 @@ class UnityIpcManager: NSObject, FlutterPlugin {
     
   
        private func setRotation(rotation: Float) {
-           UnityManager().sendMessage(String(rotation))
+           UnityManager.shared.sendMessage(String(rotation))
        }
 }

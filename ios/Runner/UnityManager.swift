@@ -8,11 +8,13 @@
 import UnityFramework
 
 class UnityManager : NSObject, NativeCallsProtocol {
+    static let shared = UnityManager()
+    
     private var ufw: UnityFramework?
     private var unityView: UIView?
     
     
-    override init() {
+    private override init() {
         super.init()
         self.initUnity()
     }

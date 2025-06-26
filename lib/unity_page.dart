@@ -12,10 +12,16 @@ class UnityPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Expanded(child: const UnityWidget()),
+            Expanded(
+              child: UnityWidget(
+                onPlatformViewCreated: (id) {
+                  print("UnityWidget created with id: $id");
+                },
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: RotationSlider(),
+              child: const RotationSlider(),
             ),
           ],
         ),
