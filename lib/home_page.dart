@@ -8,14 +8,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Home Page")),
-      body: Column(
-        children: [
-          Text("Hello, World!"),
-          ElevatedButton(
-            onPressed: () => _goToUnity(context),
-            child: Text("Go to unity"),
-          ),
-        ],
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Hello, World!"),
+            ElevatedButton(
+              onPressed: () => _goToUnity(context),
+              child: Text("Go to unity"),
+            ),
+          ],
+        ),
       ),
     );
   }
