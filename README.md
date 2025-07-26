@@ -1,16 +1,9 @@
 # unitysample
 
-A new Flutter project.
+플러터와 유니티를 연동한 샘플 프로젝트입니다.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+flutter 버전 3.32에서 개발되었으며,
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+이 샘플을 실행하기 위해서는 실제 디바이스가 필요합니다.
